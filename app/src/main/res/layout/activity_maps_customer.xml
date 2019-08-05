@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CustomerModule.CustomerMapsActivity">
+    
+
+    
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Activities.MapsActivity"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        android:layout_above="@+id/bottom"
+        >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:layout_centerInParent="true"
+        android:textColor="@color/white"
+        android:id="@+id/total_fare"
+        />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rupees"
+            android:layout_centerVertical="true"
+            android:paddingLeft="8dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+
+            />
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#80FDBC49"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/bottom"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:text="Mark Complete"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:onClick="markOrderAsComplete"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:textColor="@color/white"
+            android:id="@+id/btn_waiting_time"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:text="Waiting Time"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:onClick="showWaitingTimeDialog"
+            />
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.MapFragment"
+    >
+
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#902FCBE5"
+        android:id="@+id/ct_address"
+
+        >
+        <!--<AutoCompleteTextView-->
+            <!--android:id="@+id/et_pickup"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="50dp"-->
+            <!--android:textColor="#777777"-->
+            <!--android:textColorHint="@color/colorPrimary"-->
+            <!--android:background="@null"-->
+            <!--android:hint="Pickup Location"-->
+            <!--android:textSize="15sp"-->
+            <!--android:imeOptions="actionSearch"-->
+            <!--android:paddingLeft="8dp"-->
+            <!--android:layout_margin="16dp"-->
+            <!--android:singleLine="true"-->
+            <!--android:onClick="openPickupActivity"-->
+            <!--/>-->
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:hint="Pickup Location"
+            android:paddingLeft="8dp"
+            android:layout_margin="16dp"
+            android:editable="false"
+            android:singleLine="true"
+            android:onClick="openPickupActivity"
+            android:id="@+id/et_pickup"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:hint="Dropoff Location"
+            android:paddingLeft="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:editable="false"
+            android:singleLine="true"
+            android:layout_below="@+id/et_pickup"
+            android:onClick="openPickupActivity"
+            android:id="@+id/et_dropoff"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:padding="8dp"
+
+
+            >
+
+
+            <Button
+                android:id="@+id/btn_next"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                android:textColor="@color/colorPrimary"
+                android:textAlignment="center"
+                android:onClick="openBookNowActivity"
+                android:text="Book Now"
+                android:textSize="16sp"
+                android:drawableLeft="@drawable/ic_action_name"
+                android:layout_marginRight="8dp"
+
+                />
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:drawableLeft="@drawable/ic_schedule"
+                android:background="@color/white"
+                android:padding="8dp"
+                android:onClick="openScheduleActivity"
+                android:textSize="16sp"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:text="Schedule"
+
+                />
+        </LinearLayout>
+        </LinearLayout>
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_below="@+id/ct_address"
+        android:id="@+id/ct_details"
+        android:visibility="gone"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="4dp"
+
+            >
+
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:id="@+id/tv_distance"
+            android:gravity="center_vertical"
+            android:textColor="@color/colorGreen"
+            android:textStyle="bold"
+
+            />
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:id="@+id/tv_estimated_cost"
+            android:textColor="@color/colorOrange"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+    <RelativeLayout
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:paddingLeft="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="100dp"
+        android:background="@drawable/bg_vehicle_selector"
+        android:id="@+id/car_container"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Car"
+            android:layout_centerInParent="true"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:onClick="openVehicles"
+            android:gravity="center_vertical"
+            android:drawableLeft="@drawable/ic_vehicle"
+            android:drawablePadding="8dp"
+            />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#802ECAE5"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btn_invites_container"
+        >
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:textColor="#19ADC8"
+            android:background="#90FFFFFF"
+            android:text="Accepting Invites "
+            android:id="@+id/cb_accepting"
+            android:textSize="18sp"
+            android:checked="true"
+            android:layout_centerInParent="true"
+            />
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/btn_grad_orange"
+        android:padding="8dp"
+        android:layout_margin="16dp"
+        android:onClick="openOrderDetailsActivity"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:text="Review Booking"
+        android:id="@+id/btn_confirm"
+        android:visibility="gone"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="310dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:id="@+id/ct_vehicles"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Available Vehicles"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:padding="12dp"
+            android:background="@color/lightBlue"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:id="@+id/tv_heading"
+            />
+
+        <HorizontalScrollView
+            android:id="@+id/hsv_vehicles"
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:layout_below="@+id/tv_heading"
+            android:fillViewport="true"
+            android:measureAllChildren="false"
+            android:scrollbars="none"
+            android:paddingTop="8dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                >
+                <LinearLayout
+                    android:id="@+id/layout_vehicle1"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_horizontal"
+                    >
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_option_car"
+                        />
+                    <TextView
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Car"
+                        android:textSize="20sp"
+                        />
+                    <View
+                        android:id="@+id/vehicle1"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:background="@color/colorOrange"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/layout_vehicle2"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:orientation="vertical"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal"
+                    android:layout_marginLeft="8dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_option_mini"
+
+                        />
+                    <TextView
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Mini"
+                        android:textSize="20sp"
+                        />
+                    <View
+                        android:id="@+id/vehicle2"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:background="@color/colorOrange"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/layout_vehicle3"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="8dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_option_nano"
+                        />
+                    <TextView
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Nano"
+                        android:textSize="20sp"
+                        />
+                    <View
+                        android:id="@+id/vehicle3"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:background="@color/colorOrange"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/layout_vehicle4"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="8dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_option_vip"
+                        />
+                    <TextView
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Vip"
+                        android:textSize="20sp"
+                        />
+                    <View
+                        android:id="@+id/vehicle4"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:background="@color/colorOrange"
+                        />
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/layout_vehicle5"
+                    android:layout_width="150dp"
+                    android:layout_height="120dp"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="8dp"
+                    >
+
+                    <ImageView
+                        android:layout_width="120dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/ic_option_three_wheeler"
+                        />
+                    <TextView
+                        android:singleLine="true"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Three Wheeler"
+                        android:textSize="20sp"
+                        />
+                    <View
+                        android:id="@+id/vehicle5"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:background="@color/colorOrange"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+        </HorizontalScrollView>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_above="@+id/contai"
+            android:background="@drawable/btn_grad_orange"
+            android:padding="8dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:textSize="16sp"
+            android:visibility="gone"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:text="Add Members"
+            android:id="@+id/btn_add_members"
+
+            />
+
+
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="16dp"
+            android:inputType="number"
+            android:visibility="gone"
+            android:layout_above="@id/contai"
+            android:id="@+id/radius_input"
+            android:hint="Enter Group Radius"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/contai"
+            android:layout_above="@+id/btn_select_vehicle"
+            android:layout_marginTop="8dp"
+            >
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shared Booking"
+                android:checked="false"
+                android:id="@+id/cb_shared"
+                android:layout_marginRight="16dp"
+                />
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scheduled"
+                android:checked="false"
+                android:id="@+id/cb_scheduled"
+
+                />
+        </LinearLayout>
+
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/btn_grad_blue"
+            android:padding="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:onClick="selectVehicle"
+            android:textSize="16sp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:text="Select Vehicle"
+            android:id="@+id/btn_select_vehicle"
+
+            />
+    </RelativeLayout>
+    <!-- Costs and Detail Layout -->
+    <LinearLayout
+        android:id="@+id/layout_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        android:visibility="gone">
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="drop_sign"
+                android:src="@drawable/ic_pin_drop_black_24dp" />
+
+            <TextView
+                android:id="@+id/txtLocation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:padding="0dp"
+                android:text="Location" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="drop_sign"
+                android:src="@drawable/ic_map_black_24dp" />
+
+
+            <TextView
+                android:id="@+id/txtDestination"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="9"
+                android:gravity="center_vertical"
+                android:text="Destination" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="drop_sign"
+                android:src="@drawable/ic_attach_money_black_24dp" />
+
+            <TextView
+                android:id="@+id/txt_cost"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="9"
+                android:text="10km + 10 mins = $100" />
+
+
+        </LinearLayout>
+
+        <Button
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Okay"
+            android:id="@+id/btn_hide_details"
+            />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:background="@color/lightBlue"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"
+        android:id="@+id/post_radius_container"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:id="@+id/post_radius_input"
+            android:hint="Group Radius"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Okay"
+            android:onClick="refreshPassengers"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/btn_grad_orange"
+            android:textColor="@color/white"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

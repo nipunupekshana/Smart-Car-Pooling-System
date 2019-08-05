@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: com.schibstedspain.android:leku-5.0.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/leku-5.0.0.aar/0f92e9f31373fe6df14b01a3f87759cf/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/leku-5.0.0.aar/0f92e9f31373fe6df14b01a3f87759cf/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.schibstedspain.android/leku/5.0.0/6b16fad221a064e0a45bc019e511a7f0b49ef680/leku-5.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
